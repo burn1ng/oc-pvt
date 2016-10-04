@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task 3</title>
+</head>
+<body>
+<button>Супер кнопка</button>
+<script>
+	window.onload = function() {
+		document.getElementsByTagName('button')[0].onclick = function() {
+			var string = prompt('Введите текст произвольной длины ', '');
+			var words = string.split(/[^А-Яа-яA-Za-z]/);
+			words.sort(function(a, b) {
+				return b.length - a.length;
+			})
+			words.length = 3;
+			var output = words.join(";");
+
+			console.log(output);
+		}
+	}
+</script>
+</body>
+</html>
